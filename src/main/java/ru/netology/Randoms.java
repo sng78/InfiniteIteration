@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Randoms implements Iterable<Integer> {
     protected final int min, max;
+    protected Random random = new Random();
 
     public Randoms(int min, int max) {
         this.min = min;
@@ -21,7 +22,7 @@ public class Randoms implements Iterable<Integer> {
 
             public Integer next() {
                 // случайное число в диапазоне min - max
-                return new Random().nextInt(max - min + 1) + min;
+                return random.nextInt(max - min + 1) + min;
             }
         };
     }
